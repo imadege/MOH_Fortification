@@ -20,10 +20,10 @@ class C_Front extends MY_Controller {
 	
 	//function to load the login view if session is timed-out
 	public function access_site(){
-		$data['form'] = '<p>You need to login.<p>';
+		$data['form'] = '';
 		$data['page']='Login';
 		$data['title']='Welcome';
-		$this -> load -> view('template', $data);
+		$this -> load -> view('index', $data);
 	}
 
 	public function vehicles() {

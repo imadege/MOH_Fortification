@@ -1,22 +1,22 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<?php $this->load->view("asset") ?>
+<?php $this->load->view("assets/asset") ?>
 <body class="login-layout">
 <div class="main-container container-fluid">
 <div class="main-content">
 <div class="row-fluid">
 <div class="span12">
-<div class="login-container">
-<div class="row-fluid">
+<div class="login-container" style="width: 580px;">
+<div class="row-fluid" >
     <div class="center">
         <h1>
-            <i class="icon-leaf green"></i>
-            <span class="red">Ace</span>
-            <span class="white">Application</span>
+            <!--<i class="icon-leaf green"></i>-->
+            <img src="<?php echo base_url(); ?>images/coat_of_arms-resized.png" style="width:100px; height:100px;" />
+            <span style="display: block;" class="red ">Ministry Of Public Health and Sanitation</span>
+            <span class="white">Department of Family Health</span>
         </h1>
-        <h4 class="blue">&copy; Company Name</h4>
+        <h4 class="blue">Division of Nutrition</h4>
     </div>
 </div>
 
@@ -31,21 +31,23 @@
                         <i class="icon-coffee green"></i>
                         Please Enter Your Information
                     </h4>
-
+                    <?php if(!empty($form)){?>
+                    <div class="alert alert-error"><?php echo $form;?></div>
+                    <?php } ?>
                     <div class="space-6"></div>
 
-                    <form>
+                    <form method="post">
                         <fieldset>
                             <label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Username" />
+																<input type="text" name="username"class="span12" placeholder="Username" />
 																<i class="icon-user"></i>
 															</span>
                             </label>
 
                             <label>
 															<span class="block input-icon input-icon-right">
-																<input type="password" class="span12" placeholder="Password" />
+																<input type="password" name="secret" class="span12" placeholder="Password" />
 																<i class="icon-lock"></i>
 															</span>
                             </label>
@@ -53,12 +55,10 @@
                             <div class="space"></div>
 
                             <div class="clearfix">
-                                <label class="inline">
-                                    <input type="checkbox" />
-                                    <span class="lbl"> Remember Me</span>
-                                </label>
 
-                                <button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary">
+
+                                <button type="submit" formaction="<?php echo base_url().'c_auth/login'?>"
+                                        class="width-35 pull-right btn btn-small btn-primary">
                                     <i class="icon-key"></i>
                                     Login
                                 </button>
@@ -68,23 +68,7 @@
                         </fieldset>
                     </form>
 
-                    <div class="social-or-login center">
-                        <span class="bigger-110">Or Login Using</span>
-                    </div>
-
-                    <div class="social-login center">
-                        <a class="btn btn-primary">
-                            <i class="icon-facebook"></i>
-                        </a>
-
-                        <a class="btn btn-info">
-                            <i class="icon-twitter"></i>
-                        </a>
-
-                        <a class="btn btn-danger">
-                            <i class="icon-google-plus"></i>
-                        </a>
-                    </div>
+                  
                 </div><!--/widget-main-->
 
                 <div class="toolbar clearfix">
@@ -228,4 +212,4 @@
 </div>
 </div><!--/.main-container-->
 
-<?php $this->load->view("footer") ?>
+<?php $this->load->view("assets/footer") ?>
