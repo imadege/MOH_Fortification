@@ -62,7 +62,7 @@ class C_Auth extends MY_Controller {
 
 		} else {
 			#use an ajax request and not a whole refresh
-			$data['form'] = '<p>User Not Found!<p>';
+			$data['form'] = '<p>Use Not Found!<p>';
 			$this -> load -> view('index', $data);
 		}
 
